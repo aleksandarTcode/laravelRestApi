@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\ValidationException;
 
 class AuthController extends Controller
 {
@@ -38,9 +39,16 @@ class AuthController extends Controller
 
         $user = User::where('email', $fields['email'])->first();
 
-        if(!$user|| !Hash::check($fields['password'], $user->password)) {
-            return response([
-                'message' => 'Bad creds'], 401);
+//        if(!$user|| !Hash::check($fields['password'], $user->password)) {
+//            return response([
+//                'message' => 'Bad creds'], 401);
+//        }
+
+        if (! auth()->attempt($fields)) {
+            throw ValidationException::withMessages([
+                'email' => 'Your provided credentials could not be verified.'
+            ]);
+
         }
 
         $token = $user->createToken('myapptoken')->plainTextToken;
