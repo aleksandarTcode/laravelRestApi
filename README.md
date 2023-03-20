@@ -4,9 +4,9 @@ This is an example of a REST API using auth tokens with Laravel Sanctum
 
 ## Usage
 
-Change the *.env.example* to *.env* and add your database info
+Copy the .env.example file to .env and update the necessary configuration options
 
-For SQLite, add
+For SQLite, add:
 ```
 DB_CONNECTION=sqlite
 DB_HOST=127.0.0.1
@@ -15,35 +15,34 @@ DB_PORT=3306
 
 Create a _database.sqlite_ file in the _database_ directory
 
+Run the webserver on port 8000:
 ```
-# Run the webserver on port 8000
-
 php artisan serve
 ```
 
-##Instalation
+##Installation
 
+Clone the repository from GitHub:
 ```
-# Clone the repository from GitHub:
 git clone https://github.com/aleksandarTcode/laravelRestApi
+```
 
-# Install dependencides using Composer:
-composer install
-
-# Copy the .env.example file to .env and update the necessary configuration options
-
-# Run the database migrations:
+Run the database migrations:
+```
 php artisan migrate
+```
 
-# Start the server:
+Start the server:
+```
 php artisan serve
 ```
 
 ## Usage
 
-```
-#This API provides the following endpoints:
+### This API provides the following endpoints:
 
+
+```
 # Public
 
 GET   /api/products
