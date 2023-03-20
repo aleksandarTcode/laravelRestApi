@@ -27,6 +27,12 @@ Clone the repository from GitHub:
 git clone https://github.com/aleksandarTcode/laravelRestApi
 ```
 
+Install dependencies using Composer:
+
+```
+composer install
+```
+
 Run the database migrations:
 ```
 php artisan migrate
