@@ -39,7 +39,7 @@ php artisan serve
 
 ## Usage
 
-### This API provides the following endpoints:
+### This API provides the following endpoints: 
 
 
 ```
